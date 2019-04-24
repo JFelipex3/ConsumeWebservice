@@ -1,0 +1,16 @@
+extends ../layout.jade
+block link
+  -var selected = 'Monedas';
+block contenido
+  div(class="container")
+    h1 Detalle Moneda Seleccionada: #{moneda.Codigo}
+    div(class="card", style="width: 40rem;")
+      div(class="card-body")
+        ul(class="list-group list-group-flush")
+          li(class="list-group-item") Código: #{moneda.Codigo}
+          li(class="list-group-item") Nombre: #{moneda.Nombre}
+          li(class="list-group-item") Valor: #{moneda.Valor}
+          li(class="list-group-item") Fecha: #{moneda.Fecha}
+          p(class="card-text")
+          p(class="card-text text-center")
+            a(href="/monedas", class="btn btn-primary col-md-5") Volver

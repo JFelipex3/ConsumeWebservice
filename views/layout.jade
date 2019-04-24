@@ -1,0 +1,23 @@
+doctype
+html(lang='es')    
+  head
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css")
+    link(href="/public/css/app.css" rel="stylesheet")
+    title Consumir Apis
+  block link
+    -var selected = 'Inicio'; //default
+    
+  -var menu = {'Inicio': '/', 'Monedas': '/monedas'};
+  body
+    nav(class="navbar navbar-expand-lg navbar-light bg-light")
+      a(class="navbar-brand", href="/") API Rest
+      div(class="collapse navbar-collapse", id="navbarNav")
+        ul(class="nav nav-tabs")
+          each val, key in menu
+            li(class="nav-item")
+              if selected === key
+                a(class="nav-item nav-link active", href=val, title=key)= key
+              else
+                a(class="nav-item nav-link", href=val, title=key)= key
+    block contenido

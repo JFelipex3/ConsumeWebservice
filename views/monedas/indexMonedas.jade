@@ -1,0 +1,19 @@
+extends ../layout.jade
+block link
+  -var selected = 'Monedas';
+block contenido
+  div(class="container")
+    h1 Monedas
+    table.table.table-striped.col-md-6
+      thead
+        tr
+          th Código
+          th Nombre
+          th Valor
+        tbody
+        for moneda in monedas
+          tr
+            td 
+              a(href="/monedas/#{moneda.Codigo}", class="right-space") #{moneda.Codigo}
+            td #{moneda.Nombre}
+            td #{moneda.Valor}
